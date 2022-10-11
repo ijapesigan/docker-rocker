@@ -3,7 +3,7 @@ jeksterslab/template-rocker
 Ivan Jacob Agaloos Pesigan
 
 <!-- badges: start -->
-[![Docker Image CI](https://github.com/jeksterslab/docker-template-rocker/actions/workflows/docker.yaml/badge.svg)](https://github.com/jeksterslab/docker-template-rocker/actions/workflows/docker.yaml)
+[![Docker Build and Push](https://github.com/jeksterslab/docker-template-rocker/actions/workflows/docker-build-push.yml/badge.svg)](https://github.com/jeksterslab/docker-template-rocker/actions/workflows/docker-build-push.yml)
 <!-- badges: end -->
 
 ## Description
@@ -12,7 +12,7 @@ A `rocker/rstudio` container for the `template` project.
 
 ## Build Docker Container
 
-The `Docker Image CI` Github action builds the Docker container and pushes it to Docker Hub.
+The `Docker Build and Push` Github action builds the Docker container and pushes it to Docker Hub.
 
 ## Build Apptainer/Singularity Image File
 
