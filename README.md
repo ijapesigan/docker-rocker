@@ -30,7 +30,7 @@ make
 To launch `Rstudio Server`, run the following.
 
 ```bash
-docker run --rm -ti -e PASSWORD=yourpassword -p 8787:8787 manmcmedmiss-rocker
+docker run --rm -ti -e PASSWORD=yourpassword -p 8787:8787 jeksterslab/template-rocker
 ```
 
 Open `http://localhost:8787` on your web browser to launch `Rstudio Server`.
