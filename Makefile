@@ -1,7 +1,21 @@
-.PHONY: all clean
+.PHONY: all term termconda termclean clean
 
 all:
 	sudo -E bash apptainer.sh
+
+# terminal
+
+term: termclean
+	@(cd .bash && make)
+	@(cd .vim && make)
+
+termconda: term
+	@(cd .bash && make conda)
+
+# clean
+
+termclean:
+	@rm -rf ~/.vim
 
 clean:
 	@rm -rf *.sif

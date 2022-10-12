@@ -15,26 +15,23 @@ RUN LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygi
 
 # install R packages
 # development packages
-RUN R -e "install.packages(                                   \
-      c(                                                      \
-        'covr',                                               \
-        'devtools',                                           \
-        'ggplot2',                                            \
-        'knitr',                                              \
-        'lintr',                                              \
-        'magick',                                             \
-        'microbenchmark',                                     \
-        'pdftools',                                           \
-        'pkgdown',                                            \
-        'remotes',                                            \
-        'rmarkdown',                                          \
-        'rprojroot',                                          \
-        'styler',                                             \
-        'testthat',                                           \
-        'tidyverse',                                          \
-        'qpdf'                                                \
-      )                                                       \
-    )"
+RUN install2.r --error \
+        covr           \
+        devtools       \
+        ggplot2        \
+        knitr          \
+        lintr          \
+        magick         \
+        microbenchmark \
+        pdftools       \
+        pkgdown        \
+        remotes        \
+        rmarkdown      \
+        rprojroot      \
+        styler         \
+        testthat       \
+        tidyverse      \
+        qpdf
 
 RUN R -e "remotes::install_github( \
       c(                           \
