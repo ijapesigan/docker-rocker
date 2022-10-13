@@ -11,7 +11,8 @@ RUN apt-get update -y && apt-get install -y \
 # lazygit
 RUN LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep '"tag_name":' |  sed -E 's/.*"v*([^"]+)".*/\1/'); \
         curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"        ; \
-        tar xf lazygit.tar.gz -C /usr/local/bin lazygit
+        tar xf lazygit.tar.gz -C /usr/local/bin lazygit                                                                                                   ; \
+        rm -rf lazygit.tar.gz
 
 # install R packages
 # development packages
@@ -25,6 +26,7 @@ RUN install2.r --error \
         microbenchmark \
         pdftools       \
         pkgdown        \
+        ragg           \
         remotes        \
         rmarkdown      \
         rprojroot      \
