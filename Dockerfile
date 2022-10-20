@@ -8,7 +8,8 @@ RUN apt-get update -y && apt-get install -y \
         nnn                                 \
         curl                                \
         less                                \
-        bat
+        bat                                 \
+        rsync
 
 # lazygit
 RUN LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep '"tag_name":' |  sed -E 's/.*"v*([^"]+)".*/\1/'); \
