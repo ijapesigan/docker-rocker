@@ -1,7 +1,7 @@
 .PHONY: all term termconda termclean clean
 
 all:
-	bash apptainer.sh
+	sudo -E bash apptainer.sh
 
 # terminal
 
