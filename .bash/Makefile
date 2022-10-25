@@ -1,7 +1,4 @@
-.PHONY: all conda
+.PHONY: all
 
 all:
 	bash .build
-
-conda:
-	bash .build-conda

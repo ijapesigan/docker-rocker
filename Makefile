@@ -9,9 +9,6 @@ term: termclean
 	@(cd .bash && make)
 	@(cd .vim && make)
 
-termconda: term
-	@(cd .bash && make conda)
-
 # clean
 
 termclean:
