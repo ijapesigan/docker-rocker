@@ -2,4 +2,4 @@
 
 yes 2>/dev/null | cp -rf .bash* ~
 
-source ~/.bashrc
+source ~/.bashrc > /dev/null 2>&1

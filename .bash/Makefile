@@ -1,4 +1,4 @@
 .PHONY: all
 
 all:
-	bash .build
+	@bash .build

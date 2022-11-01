@@ -22,6 +22,7 @@ RUN LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygi
 RUN install2.r --error \
         covr           \
         devtools       \
+        distro         \
         ggplot2        \
         knitr          \
         lintr          \
@@ -55,9 +56,14 @@ RUN R -e "tinytex::install_tinytex( \
 
 ENV PATH="/opt/bin/x86_64-linux:${PATH}"
 
+RUN R -e "remotes::install_github( \
+      c(                           \
+        'jeksterslab/rProject'     \
+      )                            \
+    )"
+
 # author
 MAINTAINER "Ivan Jacob Agaloos Pesigan <r.jeksterslab@gmail.com>"
 
 # extra metadata
-LABEL version="0.9.1"
-LABEL description="template_0.9.1 rocker container."
+LABEL description="rocker container."
