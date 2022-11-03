@@ -18,7 +18,7 @@ RUN LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygi
         rm -rf lazygit.tar.gz
 
 # quarto
-RUN export QUARTO_VERSION="0.9.522"                                                                                                     ;\
+RUN export QUARTO_VERSION="1.1.251"                                                                                                     ;\
     mkdir -p /opt/quarto/${QUARTO_VERSION}                                                                                              ;\
     curl -o quarto.tar.gz -L                                                                                                             \
             "https://github.com/quarto-dev/quarto-cli/releases/download/v${QUARTO_VERSION}/quarto-${QUARTO_VERSION}-linux-amd64.tar.gz" ;\
