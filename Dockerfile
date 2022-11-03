@@ -18,12 +18,12 @@ RUN LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygi
         rm -rf lazygit.tar.gz
 
 # quarto
-curl -s https://api.github.com/repos/quarto-dev/quarto-cli/releases/latest \
+RUN curl -s https://api.github.com/repos/quarto-dev/quarto-cli/releases/latest \
         | grep "browser_download_url.*deb"                                 \
         | cut -d : -f 2,3                                                  \
         | tr -d \"                                                         \
         | wget -qi -
-dpkg -i quarto*.deb
+RUN dpkg -i quarto*.deb
 
 # install R packages
 # development packages
