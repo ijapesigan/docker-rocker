@@ -1,13 +1,16 @@
-.PHONY: all term clean
+.PHONY: all git term clean
 
 all:
 	sudo -E bash apptainer.sh
 
-# terminal
+git:
+	@echo Setting up git and ssh keys...
+	@Rscript .setup/git/git.R ${PWD}
 
 term:
-	@(cd .bash && make)
-	@(cd .vim && make)
+	@echo Building .bashrc and .vimrc...
+	@(cd .setup/bash && make)
+	@(cd .setup/vim && make)
 
 clean:
 	@rm -rf *.sif
