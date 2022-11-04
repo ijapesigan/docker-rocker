@@ -1,12 +1,5 @@
 FROM rocker/tidyverse
 
-ENV QUARTO_VERSION="1.1.251"
-ENV QUARTO_PATH="/opt/bin/quarto/${QUARTO_VERSION}"
-ENV TINYTEX_PATH="/opt/bin/x86_64-linux:${PATH}"
-ENV PATH="${QUARTO_PATH}:${PATH}"
-ENV PATH="${TINYTEX_PATH}:${PATH}"
-ENV LAZYGIT_VERSION="$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep '"tag_name":' | sed -E 's/.*"v*([^"]+)".*/\1/')"
-
 # apt
 RUN apt-get update -y && apt-get install -y \
         wget                                \
@@ -17,6 +10,13 @@ RUN apt-get update -y && apt-get install -y \
         less                                \
         bat                                 \
         rsync
+
+ENV QUARTO_VERSION="1.1.251"
+ENV QUARTO_PATH="/opt/bin/quarto/${QUARTO_VERSION}"
+ENV TINYTEX_PATH="/opt/bin/x86_64-linux:${PATH}"
+ENV PATH="${QUARTO_PATH}:${PATH}"
+ENV PATH="${TINYTEX_PATH}:${PATH}"
+ENV LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep '"tag_name":' | sed -E 's/.*"v*([^"]+)".*/\1/')
 
 # lazygit
 RUN curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
