@@ -17,12 +17,6 @@ RUN export LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield
         tar xf lazygit.tar.gz -C /usr/local/bin lazygit ;\
         rm lazygit.tar.gz
 
-# quarto
-RUN export QUARTO_VERSION=$(curl -s "https://api.github.com/repos/quarto-dev/quarto-cli/releases/latest" | grep '"tag_name":' | sed -E 's/.*"v*([^"]+)".*/\1/') ;\
-        curl -Lo quarto.tar.gz "https://github.com/quarto-dev/quarto-cli/releases/download/v${QUARTO_VERSION}/quarto-${QUARTO_VERSION}-linux-amd64.tar.gz" ;\
-        tar xf quarto.tar.gz -C /usr/local/bin quarto ;\
-        rm quarto.tar.gz
-
 # install R packages
 # development packages
 RUN install2.r --error \
@@ -56,8 +50,11 @@ RUN R -e "remotes::install_github( \
 
 RUN R -e "tinytex::install_tinytex( \
       bundle = 'TinyTeX-2',         \
-      force = TRUE                  \
+      force = TRUE,                 \
+      dir =  '/opt'                 \
     )"
+
+ENV PATH="/opt/bin/x86_64-linux:${PATH}"
 
 RUN R -e "remotes::install_github( \
       c(                           \
