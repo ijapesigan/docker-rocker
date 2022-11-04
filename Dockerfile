@@ -11,22 +11,16 @@ RUN apt-get update -y && apt-get install -y \
         bat                                 \
         rsync
 
-ENV QUARTO_VERSION="1.1.251"
-ENV QUARTO_PATH="/opt/bin/quarto/${QUARTO_VERSION}"
-ENV TINYTEX_PATH="/opt/bin/x86_64-linux:${PATH}"
-ENV PATH="${QUARTO_PATH}:${PATH}"
-ENV PATH="${TINYTEX_PATH}:${PATH}"
-
 # lazygit
-RUN LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep '"tag_name":' |  sed -E 's/.*"v*([^"]+)".*/\1/')
+RUN export LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep '"tag_name":' | sed -E 's/.*"v*([^"]+)".*/\1/')
 RUN curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
 RUN tar xf lazygit.tar.gz -C /usr/local/bin lazygit
-RUN rm -rf lazygit.tar.gz
+RUN rm lazygit.tar.gz
 
 # quarto
-RUN mkdir -p "${QUARTO_PATH}"
-RUN curl -o quarto.tar.gz -L "https://github.com/quarto-dev/quarto-cli/releases/download/v${QUARTO_VERSION}/quarto-${QUARTO_VERSION}-linux-amd64.tar.gz"
-RUN tar -zxvf quarto.tar.gz -C "${QUARTO_PATH}" --strip-components=1
+RUN export QUARTO_VERSION=$(curl -s "https://api.github.com/repos/quarto-dev/quarto-cli/releases/latest" | grep '"tag_name":' | sed -E 's/.*"v*([^"]+)".*/\1/')
+RUN curl -Lo quarto.tar.gz "https://github.com/quarto-dev/quarto-cli/releases/download/v${QUARTO_VERSION}/quarto-${QUARTO_VERSION}-linux-amd64.tar.gz"
+RUN tar xf quarto.tar.gz -C /usr/local/bin quarto
 RUN rm quarto.tar.gz
 
 # install R packages
@@ -62,8 +56,7 @@ RUN R -e "remotes::install_github( \
 
 RUN R -e "tinytex::install_tinytex( \
       bundle = 'TinyTeX-2',         \
-      force = TRUE,                 \
-      dir = '/opt'                  \
+      force = TRUE
     )"
 
 RUN R -e "remotes::install_github( \
