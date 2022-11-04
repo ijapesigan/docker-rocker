@@ -51,10 +51,10 @@ RUN R -e "remotes::install_github( \
 RUN R -e "tinytex::install_tinytex( \
       bundle = 'TinyTeX-2',         \
       force = TRUE,                 \
-      dir =  '/opt'                 \
+      dir =  '/opt/TinyTeX'                 \
     )"
 
-ENV PATH="/opt/bin/x86_64-linux:${PATH}"
+ENV PATH="/opt/TinyTeX/bin/x86_64-linux:${PATH}"
 
 RUN R -e "remotes::install_github( \
       c(                           \
@@ -63,7 +63,7 @@ RUN R -e "remotes::install_github( \
     )"
 
 # author
-MAINTAINER "Ivan Jacob Agaloos Pesigan <r.jeksterslab@gmail.com>"
+MAINTAINER "Ivan Jacob Agaloos Pesigan <learn.jeksterslab@gmail.com>"
 
 # extra metadata
 LABEL description="rocker container."
