@@ -56,7 +56,7 @@ RUN R -e "remotes::install_github( \
 
 RUN R -e "tinytex::install_tinytex( \
       bundle = 'TinyTeX-2',         \
-      force = TRUE
+      force = TRUE                  \
     )"
 
 RUN R -e "remotes::install_github( \
