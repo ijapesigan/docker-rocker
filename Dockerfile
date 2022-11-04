@@ -48,19 +48,19 @@ RUN R -e "remotes::install_github( \
       )                            \
     )"
 
-RUN R -e "tinytex::install_tinytex( \
-      bundle = 'TinyTeX-2',         \
-      force = TRUE,                 \
-      dir =  '/opt/TinyTeX'                 \
-    )"
-
-ENV PATH="/opt/TinyTeX/bin/x86_64-linux:${PATH}"
-
 RUN R -e "remotes::install_github( \
       c(                           \
         'jeksterslab/rProject'     \
       )                            \
     )"
+
+RUN R -e "tinytex::install_tinytex( \
+      bundle = 'TinyTeX-2',         \
+      force = TRUE,                 \
+      dir =  '/opt/TinyTeX'         \
+    )"
+
+ENV PATH="/opt/TinyTeX/bin/x86_64-linux:${PATH}"
 
 # author
 MAINTAINER "Ivan Jacob Agaloos Pesigan <learn.jeksterslab@gmail.com>"
