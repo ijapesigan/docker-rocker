@@ -17,6 +17,15 @@ RUN export LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield
         tar xf lazygit.tar.gz -C /usr/local/bin lazygit ;\
         rm lazygit.tar.gz
 
+# quarto
+RUN export QUARTO_VERSION=$(curl -s "https://api.github.com/repos/quarto-dev/quarto-cli/releases/latest" | grep '"tag_name":' | sed -E 's/.*"v*([^"]+)".*/\1/') ;\
+        curl -Lo quarto.tar.gz "https://github.com/quarto-dev/quarto-cli/releases/download/v${QUARTO_VERSION}/quarto-${QUARTO_VERSION}-linux-amd64.tar.gz" ;\
+        mkdir -p "/opt/quarto/${QUARTO_VERSION}" ; \
+        tar -zxvf quarto.tar.gz -C "/opt/quarto/${QUARTO_VERSION}" --strip-components=1 ;\
+        rm quarto.tar.gz
+
+ENV PATH="/opt/quarto/${QUARTO_VERSION}/bin:${PATH}"
+
 # install R packages
 # development packages
 RUN install2.r --error \

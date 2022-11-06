@@ -1,7 +1,16 @@
-.PHONY: all git term clean
+.PHONY: build term clean
 
-all:
+build:
 	sudo -E bash apptainer.sh
+
+term:
+	@echo Building .bashrc and .vimrc...
+	@(cd .setup/bash && make)
+	@(cd .setup/vim && make)
+	@echo Setting git...
+	@(cd .setup/git && make)
+	@echo Setting ssh keys...
+	@(cd .setup/ssh && make)
 
 clean:
 	@rm -rf *.sif
