@@ -7,8 +7,8 @@ TMP_FOLDER=$(mktemp -d -q "$PWD/$TODAY-XXXXXXXX" || exit 1)
 
 APPTAINER_TMPDIR="$TMP_FOLDER" \
       APPTAINER_CACHEDIR="$TMP_FOLDER" \
-      apptainer build rocker.sif \
-      docker://jeksterslab/rocker
+      apptainer build dynr-rocker.sif \
+      docker://jeksterslab/dynr-rocker
 
 # post TMP ---------------------------------------------------------------------
 rm -rf -- "$TMP_FOLDER"
