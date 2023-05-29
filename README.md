@@ -3,7 +3,7 @@ jeksterslab/rocker
 Ivan Jacob Agaloos Pesigan
 
 <!-- badges: start -->
-[![Docker Build and Push](https://github.com/jeksterslab/docker-rocker/actions/workflows/docker-build-push.yml/badge.svg)](https://github.com/jeksterslab/docker-rocker/actions/workflows/docker-build-push.yml)
+[![Docker Build and Push Recurring](https://github.com/jeksterslab/docker-rocker/actions/workflows/docker-build-push-recurring.yml/badge.svg)](https://github.com/jeksterslab/docker-rocker/actions/workflows/docker-build-push-recurring.yml)
 <!-- badges: end -->
 
 ## Description
@@ -12,7 +12,7 @@ Docker and Apptainer/Singularity containers for R projects based on `rocker/tidy
 
 ## Build Docker Container
 
-The `Docker Build and Push` GitHub action builds the Docker container and pushes it to Docker Hub.
+The `Docker Build and Push Recurring` GitHub action builds the Docker container and pushes it to Docker Hub.
 
 ## Build Apptainer/Singularity Image File
 
