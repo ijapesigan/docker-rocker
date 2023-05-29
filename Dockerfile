@@ -1,7 +1,7 @@
 FROM rocker/rstudio
 
-COPY scripts/setup.sh /opt/src/scripts/setup.sh
-RUN /opt/src/scripts/setup.sh
+COPY scripts/setup.sh setup.sh
+RUN setup.sh && rm -rf setup.sh
 
 ENV PATH="/opt/TinyTeX/bin/x86_64-linux:${PATH}"
 
