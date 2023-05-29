@@ -30,31 +30,31 @@ apt_install                    \
     libcurl4-openssl-dev       \
     libharfbuzz-dev            \
     libfribidi-dev             \
-    libfreetype6-dev \
-    libpng-dev \
-    libtiff5-dev \
-    libjpeg-dev \
+    libfreetype6-dev           \
+    libpng-dev                 \
+    libtiff5-dev               \
+    libjpeg-dev                \
     unixodbc-dev
 
 # personal apt packages
-apt_install  \
-    wget     \
-    parallel \
-    vim      \
-    nnn      \
-    curl     \
-    less     \
-    bat      \
-    rsync    \
+apt_install        \
+    wget           \
+    parallel       \
+    vim            \
+    nnn            \
+    curl           \
+    less           \
+    bat            \
+    rsync          \
     openssh-server
 
 install2.r --error --skipinstalled -n "$NCPUS" \
-    tidyverse \
-    devtools \
-    rmarkdown \
+    tidyverse   \
+    devtools    \
+    rmarkdown   \
     BiocManager \
-    vroom \
-    gert \
+    vroom       \
+    gert
 
 # development packages and cran packages
 install2.r --error --skipinstalled -n "$NCPUS" \
@@ -84,16 +84,16 @@ install2.r --error --skipinstalled -n "$NCPUS" \
 
 ## dplyr database backends
 install2.r --error --skipmissing --skipinstalled -n "$NCPUS" \
-    arrow \
-    dbplyr \
-    DBI \
-    dtplyr \
-    duckdb \
+    arrow        \
+    dbplyr       \
+    DBI          \
+    dtplyr       \
+    duckdb       \
     nycflights13 \
-    Lahman \
-    RMariaDB \
-    RPostgres \
-    RSQLite \
+    Lahman       \
+    RMariaDB     \
+    RPostgres    \
+    RSQLite      \
     fst
 
 ## a bridge to far? -- brings in another 60 packages
