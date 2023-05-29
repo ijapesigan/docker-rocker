@@ -46,7 +46,8 @@ apt_install        \
     less           \
     bat            \
     rsync          \
-    openssh-server
+    openssh-server \
+    neofetch
 
 install2.r --error --skipinstalled -n "$NCPUS" \
     tidyverse   \
@@ -137,3 +138,4 @@ echo -e "Session information...\n"
 R -q -e "sessionInfo()"
 echo -e "Installed packages...\n"
 R -q -e "unname(installed.packages()[, 1])"
+
