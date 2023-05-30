@@ -133,17 +133,21 @@ rm -rf /tmp/downloaded_packages
 ## https://github.com/rocker-org/rocker-versioned2/issues/340
 strip /usr/local/lib/R/site-library/*/libs/*.so
 
-# working directory folder
-mkdir -p /home/rstudio/working-dir
-cd /home/rstudio/working-dir
-wget https://raw.githubusercontent.com/jeksterslab/template/main/project.Rproj
-chmod -R 0777 /home/rstudio/working-dir
-echo "session-default-working-dir=/home/rstudio/working-dir" >> /etc/rstudio/rsession.conf
+# Directories
+DEFAULT_USER=${DEFAULT_USER:-"rstudio"}
 
-# project folder
-mkdir -p /home/rstudio/project
-chmod -R 0777 /home/rstudio/project
-echo "session-default-new-project-dir=/home/rstudio/project" >> /etc/rstudio/rsession.conf
+## working directory folder
+mkdir -p /home/${DEFAULT_USER}/working-dir
+cd /home/${DEFAULT_USER}/working-dir
+wget https://raw.githubusercontent.com/jeksterslab/template/main/project.Rproj
+echo "session-default-working-dir=/home/${DEFAULT_USER}/working-dir" >> /etc/rstudio/rsession.conf
+chown -R "${DEFAULT_USER}:${DEFAULT_USER}" "/home/${DEFAULT_USER}/working-dir"
+
+## project folder
+mkdir -p /home/${DEFAULT_USER}/project-dir
+cd /home/${DEFAULT_USER}/project-dir
+echo "session-default-new-project-dir=/home/${DEFAULT_USER}/project-dir" >> /etc/rstudio/rsession.conf
+chown -R "${DEFAULT_USER}:${DEFAULT_USER}" "/home/${DEFAULT_USER}/project-dir"
 
 # Installation information
 echo -e "Session information...\n"
