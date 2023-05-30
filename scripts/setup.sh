@@ -133,9 +133,18 @@ rm -rf /tmp/downloaded_packages
 ## https://github.com/rocker-org/rocker-versioned2/issues/340
 strip /usr/local/lib/R/site-library/*/libs/*.so
 
+# working directory folder
+mkdir -p /home/rstudio/working-dir
+cd /home/rstudio/working-dir
+wget https://raw.githubusercontent.com/jeksterslab/template/main/project.Rproj
+echo "session-default-working-dir=/home/rstudio/working-dir" >> /etc/rstudio/rsession.conf
+
+# project folder
+mkdir -p /home/rstudio/project
+echo "session-default-new-project-dir=/home/rstudio/project" >> /etc/rstudio/rsession.conf
+
 # Installation information
 echo -e "Session information...\n"
 R -q -e "sessionInfo()"
 echo -e "Installed packages...\n"
 R -q -e "unname(installed.packages()[, 1])"
-
