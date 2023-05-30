@@ -137,12 +137,12 @@ strip /usr/local/lib/R/site-library/*/libs/*.so
 mkdir -p /home/rstudio/working-dir
 cd /home/rstudio/working-dir
 wget https://raw.githubusercontent.com/jeksterslab/template/main/project.Rproj
-chmod -R 0775 /home/rstudio/working-dir
+chmod -R 0777 /home/rstudio/working-dir
 echo "session-default-working-dir=/home/rstudio/working-dir" >> /etc/rstudio/rsession.conf
 
 # project folder
 mkdir -p /home/rstudio/project
-chmod -R 0775 /home/rstudio/project
+chmod -R 0777 /home/rstudio/project
 echo "session-default-new-project-dir=/home/rstudio/project" >> /etc/rstudio/rsession.conf
 
 # Installation information
