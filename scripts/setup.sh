@@ -125,14 +125,6 @@ R -e "tinytex::install_tinytex( \
     dir =  '/opt/TinyTeX'       \
 )"
 
-# Clean up
-rm -rf /var/lib/apt/lists/*
-rm -rf /tmp/downloaded_packages
-
-## Strip binary installed libraries from RSPM
-## https://github.com/rocker-org/rocker-versioned2/issues/340
-strip /usr/local/lib/R/site-library/*/libs/*.so
-
 # Directories
 DEFAULT_USER=${DEFAULT_USER:-"rstudio"}
 
@@ -148,6 +140,14 @@ mkdir -p /home/${DEFAULT_USER}/project-dir
 cd /home/${DEFAULT_USER}/project-dir
 echo "session-default-new-project-dir=/home/${DEFAULT_USER}/project-dir" >> /etc/rstudio/rsession.conf
 chown -R "${DEFAULT_USER}:${DEFAULT_USER}" "/home/${DEFAULT_USER}/project-dir"
+
+# Clean up
+rm -rf /var/lib/apt/lists/*
+rm -rf /tmp/downloaded_packages
+
+## Strip binary installed libraries from RSPM
+## https://github.com/rocker-org/rocker-versioned2/issues/340
+strip /usr/local/lib/R/site-library/*/libs/*.so
 
 # Installation information
 echo -e "Session information...\n"
