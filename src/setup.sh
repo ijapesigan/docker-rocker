@@ -42,6 +42,7 @@ apt_install        \
     parallel       \
     vim            \
     nnn            \
+    tmux           \
     curl           \
     less           \
     bat            \
