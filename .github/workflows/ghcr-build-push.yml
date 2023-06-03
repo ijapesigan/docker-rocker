@@ -1,5 +1,3 @@
-# https://github.com/marketplace/actions/push-to-ghcr
-
 name: GHCR Build and Push
 
 on:
@@ -10,8 +8,8 @@ on:
 
 jobs:
 
-  build:
-
+  buildImage:
+    name: Build Docker Image
     runs-on: ubuntu-latest
 
     steps:
@@ -19,8 +17,13 @@ jobs:
         name: Checkout 
         uses: actions/checkout@v2
       -
-        name: Build and publish a Docker image for ${{ github.repository }}
-        uses: macbre/push-to-ghcr@master
-        with:
-          image_name: ${{ github.repository }}
-          github_token: ${{ secrets.GHCR_TOKEN }}
+        name: Build Container Image
+        run: docker build . --file Dockerfile --tag $IMAGE_NAME
+      -
+        name: GHCR Log-in  
+        run: echo "${{ secrets.GHCR_TOKEN }}" | docker login https://ghcr.io -u ${{ github.actor }} --password-stdin
+      -
+        name: GHCR Push 
+        run: |
+          IMAGE_ID=ghcr.io/${{ github.repository_owner }}/$IMAGE_NAME:${{ github.run_id }}
+          docker push $IMAGE_ID
