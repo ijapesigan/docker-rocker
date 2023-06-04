@@ -51,10 +51,11 @@ apt_install        \
     neofetch
 
 # apptainer
+apt_install software-properties-common # to use add-apt-repository
 add-apt-repository -y ppa:apptainer/ppa
 apt-get update
-apt-get install -y --no-install-recommends \
-    apptainer       \
+apt_install        \
+    apptainer      \
     apptainer-suid
 
 install2.r --error --skipinstalled -n "$NCPUS" \
