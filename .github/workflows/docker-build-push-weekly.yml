@@ -1,4 +1,4 @@
-name: Docker Build and Push Recurring
+name: Docker Build and Push Weekly
 
 on:
   schedule:
@@ -10,7 +10,7 @@ on:
 
 jobs:
 
-  build:
+  buildDocker:
 
     runs-on: ubuntu-latest
 
@@ -35,3 +35,18 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/${{ secrets.DOCKER_HUB_CONTAINER }}:latest
+
+  buildSingularity:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      -
+        name: Checkout 
+        uses: actions/checkout@v2
+      -
+        name: Set up Singularity
+        uses: eWaterCycle/setup-singularity@v7
+      -
+        name: Build Singularity container
+        run: singularity build ${{ secrets.DOCKER_HUB_CONTAINER }}.sif docker://${{ secrets.DOCKER_HUB_USERNAME }}/${{ secrets.DOCKER_HUB_CONTAINER }}:latest
