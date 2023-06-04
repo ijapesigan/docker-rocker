@@ -1,31 +1,16 @@
-jeksterslab/rocker
-==================
+# jeksterslab/rocker
+
 Ivan Jacob Agaloos Pesigan
 
 <!-- badges: start -->
-[![Docker Build and Push Recurring](https://github.com/jeksterslab/docker-rocker/actions/workflows/docker-build-push-recurring.yml/badge.svg)](https://github.com/jeksterslab/docker-rocker/actions/workflows/docker-build-push-recurring.yml)
+[![Docker Build and Push Weekly](https://github.com/jeksterslab/docker-rocker/actions/workflows/docker-build-push-weekly.yml/badge.svg)](https://github.com/jeksterslab/docker-rocker/actions/workflows/docker-build-push-weekly.yml)
 <!-- badges: end -->
 
 ## Description
 
-Docker and Apptainer/Singularity containers for R projects based on `rocker/tidyverse`.
+Docker container for `R` projects based on `rocker/tidyverse`.
 
-## Build Docker Container
-
-The `Docker Build and Push Recurring` GitHub action builds the Docker container and pushes it to Docker Hub.
-
-## Build Apptainer/Singularity Image File
-
-To build the Apptainer/Singularity image file (`rocker.sif`),
-run the following.
-
-```bash
-git clone https://github.com/jeksterslab/docker-rocker.git
-cd docker-rocker
-make
-```
-
-## Docker Run
+## Run
 
 To launch `Rstudio Server`, run the following.
 
@@ -37,9 +22,3 @@ Open `http://localhost:8787` on your web browser to launch `Rstudio Server`.
 
 - username: rstudio
 - password: yourpassword
-
-## Apptainer Shell
-
-```bash
-apptainer shell rocker.sif
-```
