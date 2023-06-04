@@ -8,7 +8,7 @@ Ivan Jacob Agaloos Pesigan
 
 ## Description
 
-Docker container for `R` projects based on `rocker/tidyverse`.
+A Docker container for `R` projects based on the [Rocker Project](https://rocker-project.org/).
 
 ## Run
 

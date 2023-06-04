@@ -50,14 +50,6 @@ apt_install        \
     openssh-server \
     neofetch
 
-# apptainer
-apt_install software-properties-common # to use add-apt-repository
-add-apt-repository -y ppa:apptainer/ppa
-apt-get update
-apt_install        \
-    apptainer      \
-    apptainer-suid
-
 install2.r --error --skipinstalled -n "$NCPUS" \
     tidyverse   \
     devtools    \
