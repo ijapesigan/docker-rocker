@@ -36,7 +36,7 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/${{ secrets.DOCKER_HUB_CONTAINER }}:latest
 
-  singularity:
+  apptainer: # https://github.com/marketplace/actions/setup-apptainer
 
     needs: docker
 
@@ -48,9 +48,12 @@ jobs:
         uses: actions/checkout@v2
       -
         name: Set up Singularity
-        uses: eWaterCycle/setup-singularity@v7
+        uses: eWaterCycle/setup-apptainer@v2
         with:
-          singularity-version: 3.8.3
+          apptainer-version: 1.1.2
       -
-        name: Build Singularity container
-        run: singularity build ${{ secrets.DOCKER_HUB_CONTAINER }}.sif docker://${{ secrets.DOCKER_HUB_USERNAME }}/${{ secrets.DOCKER_HUB_CONTAINER }}:latest
+        name: Build Apptainer container
+        run: apptainer build ${{ secrets.DOCKER_HUB_CONTAINER }}.sif docker://${{ secrets.DOCKER_HUB_USERNAME }}/${{ secrets.DOCKER_HUB_CONTAINER }}:latest
+      -
+        name: Run Apptainer container
+        run: apptainer run ${{ secrets.DOCKER_HUB_CONTAINER }}.sif cat /.singularity.d/Singularity
