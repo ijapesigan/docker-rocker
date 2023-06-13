@@ -50,13 +50,13 @@ apt_install        \
     openssh-server \
     neofetch
 
-install2.r --error --skipinstalled -n "$NCPUS" \
-    tidyverse   \
-    devtools    \
-    rmarkdown   \
-    BiocManager \
-    vroom       \
-    gert
+#install2.r --error --skipinstalled -n "$NCPUS" \
+#    tidyverse   \
+#    devtools    \
+#    rmarkdown   \
+#    BiocManager \
+#    vroom       \
+#    gert
 
 # development packages and cran packages
 install2.r --error --skipinstalled -n "$NCPUS" \
@@ -84,7 +84,7 @@ install2.r --error --skipinstalled -n "$NCPUS" \
     betaNB         \
     betaMC
 
-### dplyr database backends
+## dplyr database backends
 #install2.r --error --skipmissing --skipinstalled -n "$NCPUS" \
 #    arrow        \
 #    dbplyr       \
@@ -121,6 +121,7 @@ R -e "remotes::install_github(      \
     )                               \
 )"
 R -e "tinytex::install_tinytex( \
+    bundle = 'TinyTeX',         \
     force = TRUE,               \
     dir =  '/opt/TinyTeX'       \
 )"
