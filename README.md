@@ -8,7 +8,7 @@ Ivan Jacob Agaloos Pesigan
 
 ## Description
 
-Docker and Apptainer/Singularity containers for `R` projects based on the [Rocker Project](https://rocker-project.org/) package.
+Docker and Apptainer/Singularity containers for `R` projects based on the [Rocker Project](https://rocker-project.org/).
 
 ## GitHub Actions
 
@@ -19,7 +19,7 @@ The `Docker and Apptainer Build and Push (Weekly)` GitHub actions workflow perfo
 - Builds the Singularity Image File (SIF) using Apptainer based on the Docker Hub image from the previous step.
 - Creates a GitHub release named `sif-YEAR-MM-DD-HHMMSS`. Note that `sif-YEAR-MM-DD-HHMMSS.zip` contains the SIF. 
 
-## Docker Shell
+## Docker Container
 
 To launch `Rstudio Server`, run the following.
 
