@@ -121,7 +121,7 @@ R -e "remotes::install_github(      \
     )                               \
 )"
 R -e "tinytex::install_tinytex( \
-    bundle = 'TinyTeX',         \
+    bundle = 'TinyTeX-2',         \
     force = TRUE,               \
     dir =  '/opt/TinyTeX'       \
 )"
