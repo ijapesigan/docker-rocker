@@ -143,9 +143,11 @@ echo "session-default-new-project-dir=/home/${DEFAULT_USER}/project-dir" >> /etc
 chown -R "${DEFAULT_USER}:${DEFAULT_USER}" "/home/${DEFAULT_USER}/project-dir"
 
 ## build details
-CONTAINER_RELEASE=$( date '+%F-%H%M%S%2N' )
+echo "$(git ls-remote https://github.com/jeksterslab/docker-rocker.git main)" > /etc/profile.d/container_init.sh
+awk '{print $1 > "/etc/profile.d/container_init.sh"}' /etc/profile.d/container_init.sh
+CONTAINER_RELEASE=$(cat /etc/profile.d/container_init.sh)
 echo "export CONTAINER_RELEASE=$CONTAINER_RELEASE" > /etc/profile.d/container_init.sh
-CONTAINER_RELEASE_MSG="\"This release is based on the $CONTAINER_RELEASE build.\""
+CONTAINER_RELEASE_MSG="\"This release is based on the commit $CONTAINER_RELEASE.\""
 echo "export CONTAINER_RELEASE_MSG=$CONTAINER_RELEASE_MSG" >> /etc/profile.d/container_init.sh
 mkdir -p /srv/build
 cd /srv/build
