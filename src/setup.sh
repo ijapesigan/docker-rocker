@@ -85,18 +85,18 @@ install2.r --error --skipinstalled -n "$NCPUS" \
     betaMC
 
 ## dplyr database backends
-#install2.r --error --skipmissing --skipinstalled -n "$NCPUS" \
-#    arrow        \
-#    dbplyr       \
-#    DBI          \
-#    dtplyr       \
-#    duckdb       \
-#    nycflights13 \
-#    Lahman       \
-#    RMariaDB     \
-#    RPostgres    \
-#    RSQLite      \
-#    fst
+install2.r --error --skipmissing --skipinstalled -n "$NCPUS" \
+    arrow        \
+    dbplyr       \
+    DBI          \
+    dtplyr       \
+    duckdb       \
+    nycflights13 \
+    Lahman       \
+    RMariaDB     \
+    RPostgres    \
+    RSQLite      \
+    fst
 
 ## a bridge to far? -- brings in another 60 packages
 # install2.r --error --skipinstalled -n "$NCPUS" tidymodels
@@ -143,11 +143,9 @@ echo "session-default-new-project-dir=/home/${DEFAULT_USER}/project-dir" >> /etc
 chown -R "${DEFAULT_USER}:${DEFAULT_USER}" "/home/${DEFAULT_USER}/project-dir"
 
 ## build details
-echo "$(git ls-remote https://github.com/rocker-org/rocker-versioned2.git master)" > /etc/profile.d/container_init.sh
-awk '{print $1 > "/etc/profile.d/container_init.sh"}' /etc/profile.d/container_init.sh
-CONTAINER_RELEASE=$(cat /etc/profile.d/container_init.sh)
+CONTAINER_RELEASE=$( date '+%F-%H%M%S%2N' )
 echo "export CONTAINER_RELEASE=$CONTAINER_RELEASE" > /etc/profile.d/container_init.sh
-CONTAINER_RELEASE_MSG="\"This release is based on the commit $CONTAINER_RELEASE from the master branch of rocker-org/rocker-versioned2.\""
+CONTAINER_RELEASE_MSG="\"This release is based on the $CONTAINER_RELEASE build.\""
 echo "export CONTAINER_RELEASE_MSG=$CONTAINER_RELEASE_MSG" >> /etc/profile.d/container_init.sh
 mkdir -p /srv/build
 cd /srv/build
