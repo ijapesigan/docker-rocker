@@ -50,13 +50,17 @@ apt_install        \
     openssh-server \
     neofetch
 
-#install2.r --error --skipinstalled -n "$NCPUS" \
-#    tidyverse   \
-#    devtools    \
-#    rmarkdown   \
-#    BiocManager \
-#    vroom       \
-#    gert
+# radian
+apt_install python3-pip
+pip3 install -U radian
+
+install2.r --error --skipinstalled -n "$NCPUS" \
+    tidyverse   \
+    devtools    \
+    rmarkdown   \
+    BiocManager \
+    vroom       \
+    gert
 
 # development packages and cran packages
 install2.r --error --skipinstalled -n "$NCPUS" \
@@ -65,6 +69,7 @@ install2.r --error --skipinstalled -n "$NCPUS" \
     distro         \
     ggplot2        \
     knitr          \
+    languageserver \
     lintr          \
     magick         \
     microbenchmark \
