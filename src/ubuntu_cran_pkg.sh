@@ -31,7 +31,7 @@ install2.r --error --skipinstalled -n -1 \
 install2.r --error --skipinstalled -n -1 \
     tidymodels
 
-# development packages and cran packages
+## development packages and cran packages
 install2.r --error --skipinstalled -n -1 \
     covr           \
     devtools       \
