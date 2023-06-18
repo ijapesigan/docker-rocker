@@ -4,6 +4,7 @@
 
 set -e
 
+## tidyverse
 install2.r --error --skipinstalled -n -1 \
     tidyverse   \
     devtools    \
@@ -11,6 +12,24 @@ install2.r --error --skipinstalled -n -1 \
     BiocManager \
     vroom       \
     gert
+
+## dplyr database backends
+install2.r --error --skipinstalled -n -1 \
+    arrow        \
+    dbplyr       \
+    DBI          \
+    dtplyr       \
+    duckdb       \
+    nycflights13 \
+    Lahman       \
+    RMariaDB     \
+    RPostgres    \
+    RSQLite      \
+    fst
+
+## a bridge to far? -- brings in another 60 packages
+install2.r --error --skipinstalled -n -1 \
+    tidymodels
 
 # development packages and cran packages
 install2.r --error --skipinstalled -n -1 \
@@ -38,21 +57,3 @@ install2.r --error --skipinstalled -n -1 \
     betaSandwich   \
     betaNB         \
     betaMC
-
-## dplyr database backends
-install2.r --error --skipinstalled -n -1 \
-    arrow        \
-    dbplyr       \
-    DBI          \
-    dtplyr       \
-    duckdb       \
-    nycflights13 \
-    Lahman       \
-    RMariaDB     \
-    RPostgres    \
-    RSQLite      \
-    fst
-
-## a bridge to far? -- brings in another 60 packages
-install2.r --error --skipinstalled -n -1 \
-    tidymodels
