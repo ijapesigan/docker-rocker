@@ -6,20 +6,21 @@ set -e
 DEFAULT_USER=${DEFAULT_USER:-"rstudio"}
 
 ## working directory folder
-mkdir -p /home/${DEFAULT_USER}/working-dir
-cd /home/${DEFAULT_USER}/working-dir
+mkdir -p "/home/${DEFAULT_USER}/working-dir"
+cd "/home/${DEFAULT_USER}/working-dir"
 wget https://raw.githubusercontent.com/jeksterslab/template/main/project.Rproj
 echo "session-default-working-dir=/home/${DEFAULT_USER}/working-dir" >> /etc/rstudio/rsession.conf
 chown -R "${DEFAULT_USER}:${DEFAULT_USER}" "/home/${DEFAULT_USER}/working-dir"
 
 ## project folder
-mkdir -p /home/${DEFAULT_USER}/project-dir
-cd /home/${DEFAULT_USER}/project-dir
+mkdir -p "/home/${DEFAULT_USER}/project-dir"
+cd "/home/${DEFAULT_USER}/project-dir"
 echo "session-default-new-project-dir=/home/${DEFAULT_USER}/project-dir" >> /etc/rstudio/rsession.conf
 chown -R "${DEFAULT_USER}:${DEFAULT_USER}" "/home/${DEFAULT_USER}/project-dir"
 
 ## build
-echo "$(git ls-remote https://github.com/jeksterslab/docker-rocker.git main)" > /etc/profile.d/container_init.sh
+TEMP_VAR="$(git ls-remote https://github.com/jeksterslab/docker-rocker.git main)"
+echo "$TEMP_VAR" > /etc/profile.d/container_init.sh
 awk '{print $1 > "/etc/profile.d/container_init.sh"}' /etc/profile.d/container_init.sh
 CONTAINER_RELEASE=$(cat /etc/profile.d/container_init.sh)
 echo "export CONTAINER_RELEASE=$CONTAINER_RELEASE" > /etc/profile.d/container_init.sh

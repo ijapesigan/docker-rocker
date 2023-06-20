@@ -36,6 +36,7 @@ install2.r --error --skipinstalled -n -1 \
     covr           \
     devtools       \
     distro         \
+    httpgd         \
     ggplot2        \
     knitr          \
     languageserver \
@@ -57,3 +58,5 @@ install2.r --error --skipinstalled -n -1 \
     betaSandwich   \
     betaNB         \
     betaMC
+
+# httpgd and languageserver are packages useful in VSCode

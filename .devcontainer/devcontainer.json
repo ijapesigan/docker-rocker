@@ -1,31 +1,37 @@
 {
-  "name": "Docker Development Environment",
-  "build": {
-    "dockerfile": "Dockerfile"
-  },
+    "name": "${localWorkspaceFolderBasename}",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
 
-  "customizations": {
-	"vscode": {
-		"extensions": [
-            "REditorSupport.r",
-			"GitHub.vscode-github-actions",
-			"ms-azuretools.vscode-docker",
-            "dracula-theme.theme-dracula"
-		],
-        "settings": {
-          "r.rterm.linux": "/usr/local/bin/radian"
-      }
-	}
-  },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "GitHub.codespaces",
+                "GitHub.vscode-github-actions",
+                "ms-azuretools.vscode-docker",
+                "ms-vscode.makefile-tools",
+                "yzhang.markdown-all-in-one",
+                "quarto.quarto",
+                "REditorSupport.r",
+                "dracula-theme.theme-dracula"
+            ],
+            "settings": {
+                "r.rterm.linux": "/usr/local/bin/radian",
+                "r.plot.useHttpgd": true
+            }
+        }
+    },
 
-  "forwardPorts": [8787],
-	"portsAttributes": {
-		"8787": {
-			"label": "Rstudio",
-			"requireLocalPort": true,
-			"onAutoForward": "ignore"
-		}
-	},
+    "forwardPorts": [8787],
+        "portsAttributes": {
+            "8787": {
+                "label": "Rstudio",
+                "requireLocalPort": true,
+                "onAutoForward": "ignore"
+            }
+    },
 
-	"postAttachCommand": "sudo rstudio-server start"
+    "postAttachCommand": "sudo rstudio-server start"
+
 }
