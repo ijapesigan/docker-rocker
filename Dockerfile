@@ -1,6 +1,6 @@
 FROM rocker/rstudio
 
-ADD src /usr/src/local/src
+ADD tools /usr/src/local/src
 RUN cd /usr/src/local/src     && \
     chmod 777 setup.sh        && \
     ./setup.sh                && \
