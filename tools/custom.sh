@@ -8,7 +8,7 @@ DEFAULT_USER=${DEFAULT_USER:-"rstudio"}
 ## working directory folder
 mkdir -p "/home/${DEFAULT_USER}/working-dir"
 cd "/home/${DEFAULT_USER}/working-dir"
-wget https://raw.githubusercontent.com/jeksterslab/template/main/project.Rproj
+wget https://raw.githubusercontent.com/ijapesigan/template/main/project.Rproj
 echo "session-default-working-dir=/home/${DEFAULT_USER}/working-dir" >> /etc/rstudio/rsession.conf
 chown -R "${DEFAULT_USER}:${DEFAULT_USER}" "/home/${DEFAULT_USER}/working-dir"
 
@@ -19,7 +19,7 @@ echo "session-default-new-project-dir=/home/${DEFAULT_USER}/project-dir" >> /etc
 chown -R "${DEFAULT_USER}:${DEFAULT_USER}" "/home/${DEFAULT_USER}/project-dir"
 
 ## build
-TEMP_VAR="$(git ls-remote https://github.com/jeksterslab/docker-rocker.git main)"
+TEMP_VAR="$(git ls-remote https://github.com/ijapesigan/docker-rocker.git main)"
 echo "$TEMP_VAR" > /etc/profile.d/container_init.sh
 awk '{print $1 > "/etc/profile.d/container_init.sh"}' /etc/profile.d/container_init.sh
 CONTAINER_RELEASE=$(cat /etc/profile.d/container_init.sh)

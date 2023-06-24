@@ -1,4 +1,4 @@
-FROM jeksterslab/rocker
+FROM ijapesigan/rocker
 
 ADD tools /usr/src/local/src
 RUN chmod 777 /usr/src/local/src/setup.sh         && \
@@ -6,5 +6,5 @@ RUN chmod 777 /usr/src/local/src/setup.sh         && \
     rm -rf /usr/src/local/src
 
 # extra metadata
-LABEL author="Ivan Jacob Agaloos Pesigan <learn.jeksterslab@gmail.com>"
-LABEL description="jeksterslab/rocker container."
+LABEL author="Ivan Jacob Agaloos Pesigan <ijapesigan@gmail.com>"
+LABEL description="ijapesigan/rocker container."
