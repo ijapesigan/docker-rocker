@@ -45,6 +45,7 @@ install2.r --error --skipinstalled -n -1 \
     microbenchmark \
     pdftools       \
     pkgdown        \
+    printr         \
     ragg           \
     remotes        \
     rmarkdown      \
