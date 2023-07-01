@@ -36,10 +36,8 @@ install2.r --error --skipinstalled -n -1 \
     covr           \
     devtools       \
     distro         \
-    httpgd         \
     ggplot2        \
     knitr          \
-    languageserver \
     lintr          \
     magick         \
     microbenchmark \
@@ -60,4 +58,9 @@ install2.r --error --skipinstalled -n -1 \
     betaNB         \
     betaMC
 
-# httpgd and languageserver are packages useful in VSCode
+# vscode project dependencies
+install2.r --error --skipinstalled -n -1 \
+  languageserver \
+  httpgd         \
+  styler         \
+  lintr
