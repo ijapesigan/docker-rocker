@@ -40,6 +40,7 @@ install2.r --error --skipinstalled -n -1 \
     knitr          \
     lintr          \
     magick         \
+    markdown       \
     microbenchmark \
     pdftools       \
     pkgdown        \
@@ -52,6 +53,7 @@ install2.r --error --skipinstalled -n -1 \
     testthat       \
     tidyverse      \
     qpdf           \
+    quarto         \
     semmcci        \
     betaDelta      \
     betaSandwich   \
