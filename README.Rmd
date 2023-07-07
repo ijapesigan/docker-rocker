@@ -16,8 +16,6 @@ knitr::opts_chunk$set(
 )
 ```
 
-Ivan Jacob Agaloos Pesigan
-
 <!-- badges: start -->
 [![Docker and Apptainer Build and Push](https://github.com/ijapesigan/docker-rocker/actions/workflows/docker-apptainer-build-push.yml/badge.svg)](https://github.com/ijapesigan/docker-rocker/actions/workflows/docker-apptainer-build-push.yml)
 [![Docker and Apptainer Build and Push (Weekly)](https://github.com/ijapesigan/docker-rocker/actions/workflows/docker-apptainer-build-push-weekly.yml/badge.svg)](https://github.com/ijapesigan/docker-rocker/actions/workflows/docker-apptainer-build-push-weekly.yml)
