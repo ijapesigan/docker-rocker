@@ -1,5 +1,3 @@
-# always refer to .gitignore in rProject when editing this file
-
 # https://github.com/github/gitignore/blob/main/R.gitignore
 
 # History files
@@ -17,9 +15,9 @@
 *-Ex.R
 
 # Output files from R CMD build
-/*.tar.gz
+# /*.tar.gz
 # allow package build to be version controlled
-# !/*.tar.gz
+!/*.tar.gz
 
 # Output files from R CMD check
 /*.Rcheck/
@@ -80,8 +78,3 @@ detritus
 .library
 
 # etc
-project.Rproj
-
-# diff
-# etc | project.Rproj
-# Output files from R CMD build | /*.tar.gz
