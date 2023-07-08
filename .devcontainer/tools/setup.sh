@@ -36,6 +36,3 @@ R -e "tinytex::install_tinytex( \
     force = TRUE,               \
     dir =  '/opt/TinyTeX'       \
 )"
-
-# rProject
-Rscript -e "remotes::install_github('ijapesigan/rProject')"
