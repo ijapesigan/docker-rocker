@@ -22,17 +22,6 @@
                 "r.plot.useHttpgd": true
             }
         }
-    },
-
-    "forwardPorts": [8787],
-        "portsAttributes": {
-            "8787": {
-                "label": "Rstudio",
-                "requireLocalPort": true,
-                "onAutoForward": "ignore"
-            }
-    },
-
-    "postAttachCommand": "sudo rstudio-server start"
+    }
 
 }

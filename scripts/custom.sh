@@ -2,29 +2,13 @@
 
 set -e
 
-# Directories
-DEFAULT_USER=${DEFAULT_USER:-"rstudio"}
-
-## working directory folder
-mkdir -p "/home/${DEFAULT_USER}/working-dir"
-cd "/home/${DEFAULT_USER}/working-dir"
-wget https://raw.githubusercontent.com/ijapesigan/template/main/project.Rproj
-echo "session-default-working-dir=/home/${DEFAULT_USER}/working-dir" >> /etc/rstudio/rsession.conf
-chown -R "${DEFAULT_USER}:${DEFAULT_USER}" "/home/${DEFAULT_USER}/working-dir"
-
-## project folder
-mkdir -p "/home/${DEFAULT_USER}/project-dir"
-cd "/home/${DEFAULT_USER}/project-dir"
-echo "session-default-new-project-dir=/home/${DEFAULT_USER}/project-dir" >> /etc/rstudio/rsession.conf
-chown -R "${DEFAULT_USER}:${DEFAULT_USER}" "/home/${DEFAULT_USER}/project-dir"
-
 # build
 
 GIT_HUB_USERNAME=ijapesigan
-GIT_HUB_REPO=docker-rocker
+GIT_HUB_REPO=docker-r2u
 GIT_HUB_BRANCH=main
 DOCKER_HUB_USERNAME=ijapesigan
-DOCKER_HUB_CONTAINER=rocker
+DOCKER_HUB_CONTAINER=r2u
 
 ## container
 TEMP_VAR=$(git ls-remote "https://github.com/$GIT_HUB_USERNAME/$GIT_HUB_REPO".git "$GIT_HUB_BRANCH")
