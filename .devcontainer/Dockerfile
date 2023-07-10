@@ -1,10 +1,10 @@
-FROM ijapesigan/r2u
+FROM ijapesigan/rocker
 
 ADD scripts /usr/src/local/src
-RUN chmod 777 /usr/src/local/src/setup.sh && \
-    ./usr/src/local/src/setup.sh          && \
+RUN chmod 777 /usr/src/local/src/setup.sh         && \
+    ./usr/src/local/src/setup.sh                  && \
     rm -rf /usr/src/local/src
 
 # extra metadata
 LABEL author="Ivan Jacob Agaloos Pesigan <ijapesigan@gmail.com>"
-LABEL description="ijapesigan/r2u container."
+LABEL description="ijapesigan/rocker container."

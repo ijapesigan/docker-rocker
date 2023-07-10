@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# based on https://raw.githubusercontent.com/rocker-org/rocker-versioned2/master/scripts/install_tidyverse.sh
+
 set -e
 
 # a function to install apt packages only if they are not installed
@@ -11,6 +13,25 @@ function apt_install() {
         apt-get install -y --no-install-recommends "$@"
     fi
 }
+
+apt_install                    \
+    libxml2-dev                \
+    libcairo2-dev              \
+    libgit2-dev                \
+    default-libmysqlclient-dev \
+    libpq-dev                  \
+    libsasl2-dev               \
+    libsqlite3-dev             \
+    libssh2-1-dev              \
+    libxtst6                   \
+    libcurl4-openssl-dev       \
+    libharfbuzz-dev            \
+    libfribidi-dev             \
+    libfreetype6-dev           \
+    libpng-dev                 \
+    libtiff5-dev               \
+    libjpeg-dev                \
+    unixodbc-dev
 
 # personal apt packages
 apt_install        \
@@ -26,6 +47,10 @@ apt_install        \
     vim            \
     wget
 
+# radian
+# apt_install python3-pip
+# pip3 install -U radian
+
 # lazygit
 LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
 curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
@@ -37,16 +62,3 @@ rm -rf lazygit*
 git clone https://github.com/dylanaraps/pfetch.git
 install pfetch/pfetch /usr/local/bin/
 ls -l /usr/local/bin/pfetch
-
-# quarto
-QUARTO_VERSION=$(curl -s "https://api.github.com/repos/quarto-dev/quarto-cli/releases/latest" | grep '"tag_name":' | sed -E 's/.*"v*([^"]+)".*/\1/')
-export QUARTO_VERSION
-curl -Lo quarto.tar.gz "https://github.com/quarto-dev/quarto-cli/releases/download/v${QUARTO_VERSION}/quarto-${QUARTO_VERSION}-linux-amd64.tar.gz"
-mkdir -p /usr/local
-tar -zxvf quarto.tar.gz -C /usr/local --strip-components=1
-rm -rf quarto*
-
-# pandoc
-wget https://raw.githubusercontent.com/rocker-org/rocker-versioned2/master/scripts/install_pandoc.sh
-bash install_pandoc.sh
-rm -rf install_pandoc.sh
