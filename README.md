@@ -10,6 +10,8 @@ Ivan Jacob Agaloos Pesigan
 Push](https://github.com/ijapesigan/docker-rocker/actions/workflows/docker-apptainer-build-push.yml/badge.svg)](https://github.com/ijapesigan/docker-rocker/actions/workflows/docker-apptainer-build-push.yml)
 [![Docker and Apptainer Build and Push
 (Weekly)](https://github.com/ijapesigan/docker-rocker/actions/workflows/docker-apptainer-build-push-weekly.yml/badge.svg)](https://github.com/ijapesigan/docker-rocker/actions/workflows/docker-apptainer-build-push-weekly.yml)
+[![Docker Build and Push (Daily at
+00:00:00)](https://github.com/ijapesigan/docker-rocker/actions/workflows/docker-build-push-daily-rocker.yml/badge.svg)](https://github.com/ijapesigan/docker-rocker/actions/workflows/docker-build-push-daily-rocker.yml)
 <!-- badges: end -->
 
 ## Description
