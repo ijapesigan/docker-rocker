@@ -18,7 +18,9 @@ project <- "docker-rocker"
 
 pkg_cran <- c()
 
-pkg_github <- c()
+pkg_github <- c(
+  "ijapesigan/rProject"
+)
 
 pkg_github_ref <- c()
 
