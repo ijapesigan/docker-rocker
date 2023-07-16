@@ -26,12 +26,10 @@ jobs:
         name: Clean
         run: |
           make clean
-          make cleanpkg
       -
         name: Make Project
         run: |
           make install
-          make all
           make push
       - 
         name: Commit and push changes
