@@ -8,7 +8,7 @@ DEFAULT_USER=${DEFAULT_USER:-"rstudio"}
 ## working directory folder
 mkdir -p "/home/${DEFAULT_USER}/working-dir"
 cd "/home/${DEFAULT_USER}/working-dir"
-wget https://raw.githubusercontent.com/ijapesigan/template/main/project.Rproj
+wget https://raw.githubusercontent.com/ijapesigan/rProject/main/project.Rproj
 echo "session-default-working-dir=/home/${DEFAULT_USER}/working-dir" >> /etc/rstudio/rsession.conf
 chown -R "${DEFAULT_USER}:${DEFAULT_USER}" "/home/${DEFAULT_USER}/working-dir"
 
