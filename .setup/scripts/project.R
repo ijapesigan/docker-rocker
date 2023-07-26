@@ -28,6 +28,8 @@ ver <- c()
 
 ignore <- NULL
 
+license <- NULL
+
 git_user <- "ijapesigan"
-git_email <- "ijapesigan@gmail.com"
-r_email <- "ijapesigan@gmail.com"
+git_email <- "learn.ijapesigan@gmail.com"
+r_email <- "r.ijapesigan@gmail.com"
