@@ -7,3 +7,5 @@ R -e "tinytex::install_tinytex( \
     force = TRUE,               \
     dir =  '/opt/TinyTeX'       \
 )"
+
+R -e "tinytex::tlmgr_install('latexmk')"
