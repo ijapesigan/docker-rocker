@@ -66,3 +66,7 @@ ls -l /usr/local/bin/pfetch
 # jags
 apt_install        \
   jags
+
+# clang-format
+apt_install        \
+  clang-format
