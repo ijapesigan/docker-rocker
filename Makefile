@@ -1,4 +1,4 @@
-.PHONY: all build clean cleanall cleanpkg cleanproj cleanpush cleantinytex clone coverage data dependencies readme docs dotfiles install latex lint local localforce pdf pdflib pkg pkgdown project push quarto quartolib style tinytex tinytexforce vignettes lib
+.PHONY: all build rproject clean cleanall cleanpkg cleanproj cleanpush cleantinytex bib bibrproject clone coverage data dependencies readme docs dotfiles install latex lint local localforce pdf pkg pkgdown project push quarto style tinytex tinytexforce vignettes
 
 push: build docs latex coverage cleanpush
 
@@ -35,6 +35,14 @@ cleanproj:
 	@echo "\n\nCleaning project...\n\n"
 	@Rscript -e "rProject::CleanProj(\"${PWD}\")"
 
+bib:
+	@echo "\n\nCleaning project...\n\n"
+	@Rscript -e "rProject::Bib(\"${PWD}\", bib_lib = FALSE)"
+
+bibrproject:
+	@echo "\n\nCleaning project...\n\n"
+	@Rscript -e "rProject::Bib(\"${PWD}\", bib_lib = TRUE)"
+
 tinytex: 
 	@echo "\n\nTinyTex...\n\n"
 	@Rscript -e "rProject::TinyTex(\"${PWD}\", force = FALSE)"
@@ -66,7 +74,7 @@ vignettes:
 	@echo "\n\nPrecompiling vignettes...\n\n"
 	@Rscript -e "rProject::VignettesPrecompile(\"${PWD}\")"
 
-build: project pkg dotfiles clean tinytex lint data dependencies vignettes
+build: project pkg dotfiles clean tinytex lint data dependencies bib vignettes
 	@echo "\n\nBuilding package...\n\n"
 	@Rscript -e "rProject::Build(\"${PWD}\")"
 
@@ -82,10 +90,6 @@ pdf:
 	@echo "\n\nCompiling latex...\n\n"
 	@Rscript -e "rProject::LatexMake(\"${PWD}\", clean = TRUE)"
 
-pdflib:
-	@echo "\n\nCompiling latex...\n\n"
-	@Rscript -e "rProject::LatexMake(\"${PWD}\", clean = TRUE, bib_lib = FALSE)"
-
 pkgdown:
 	@echo "\n\nBuilding pkgdown website...\n\n"
 	@Rscript -e "rProject::Site(\"${PWD}\")"
@@ -93,10 +97,6 @@ pkgdown:
 quarto:
 	@echo "\n\nRendering quarto...\n\n"
 	@Rscript -e "rProject::Quarto(\"${PWD}\")"
-
-quartolib:
-	@echo "\n\nRendering quarto...\n\n"
-	@Rscript -e "rProject::Quarto(\"${PWD}\", bib_lib = FALSE)"
 
 readme:
 	@echo "\n\nBuilding README.md...\n\n"
@@ -125,8 +125,6 @@ localforce: project dotfiles
 	@echo "\n\nInstalling local applications...\n\n"
 	@Rscript -e "rProject::InstallLocal(all = TRUE, force = TRUE)"
 	@Rscript .setup/scripts/make-config.R ${PWD}
-
-lib: build readme pdflib quartolib cleanpush
 
 clone:
 	@bash .setup/scripts/clone.sh
