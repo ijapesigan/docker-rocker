@@ -38,6 +38,7 @@ apt_install        \
     bat            \
     curl           \
     git            \
+    git-lfs        \
     less           \
     nnn            \
     openssh-server \
