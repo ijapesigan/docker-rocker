@@ -36,6 +36,7 @@ jobs:
         name: Docker build and push
         uses: docker/build-push-action@v4.0.0
         with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
           context: .
           file: ./Dockerfile
           push: true
