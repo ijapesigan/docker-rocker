@@ -1,4 +1,4 @@
-FROM rocker/rstudio
+FROM rocker/rstudio:4.3.1
 
 ADD scripts /usr/src/local/src
 RUN cd /usr/src/local/src     && \
