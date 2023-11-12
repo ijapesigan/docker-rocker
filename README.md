@@ -1,18 +1,18 @@
 ijapesigan/rocker
 ================
 Ivan Jacob Agaloos Pesigan
-2023-11-10
+2023-11-12
 
 <!-- README.md is generated from .setup/readme/README.Rmd. Please edit that file -->
 <!-- badges: start -->
 
 [![Make
 Project](https://github.com/ijapesigan/docker-rocker/actions/workflows/make.yml/badge.svg)](https://github.com/ijapesigan/docker-rocker/actions/workflows/make.yml)
-[![Docker and Apptainer Build and
-Push](https://github.com/ijapesigan/docker-rocker/actions/workflows/docker-apptainer-build-push.yml/badge.svg)](https://github.com/ijapesigan/docker-rocker/actions/workflows/docker-apptainer-build-push.yml)
 [![Docker and Apptainer Build and Push
-(Weekly)](https://github.com/ijapesigan/docker-rocker/actions/workflows/docker-apptainer-build-push-weekly.yml/badge.svg)](https://github.com/ijapesigan/docker-rocker/actions/workflows/docker-apptainer-build-push-weekly.yml)
-[![Docker Build and Push (Daily at
+\[amd64/arm64\]](https://github.com/ijapesigan/docker-rocker/actions/workflows/docker-apptainer-build-push-amd64-arm64.yml/badge.svg)](https://github.com/ijapesigan/docker-rocker/actions/workflows/docker-apptainer-build-push-amd64-arm64.yml)
+[![Docker and Apptainer Build and Push \[amd64/arm64\]
+(Weekly)](https://github.com/ijapesigan/docker-rocker/actions/workflows/docker-apptainer-build-push-weekly-amd64-arm64.yml/badge.svg)](https://github.com/ijapesigan/docker-rocker/actions/workflows/docker-apptainer-build-push-weekly-amd64-arm64.yml)
+[![Docker Build and Push \[amd64/arm64\] (Daily at
 00:00:00)](https://github.com/ijapesigan/docker-rocker/actions/workflows/docker-build-push-daily-rocker.yml/badge.svg)](https://github.com/ijapesigan/docker-rocker/actions/workflows/docker-build-push-daily-rocker.yml)
 [![Shell
 Check](https://github.com/ijapesigan/docker-rocker/actions/workflows/shellcheck.yml/badge.svg)](https://github.com/ijapesigan/docker-rocker/actions/workflows/shellcheck.yml)
