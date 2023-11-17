@@ -13,7 +13,7 @@ Project](https://github.com/ijapesigan/docker-rocker/actions/workflows/make.yml/
 [![Docker and Apptainer Build and Push \[amd64/arm64\]
 (Weekly)](https://github.com/ijapesigan/docker-rocker/actions/workflows/docker-apptainer-build-push-weekly-amd64-arm64.yml/badge.svg)](https://github.com/ijapesigan/docker-rocker/actions/workflows/docker-apptainer-build-push-weekly-amd64-arm64.yml)
 [![Docker Build and Push \[amd64/arm64\] (Daily at
-03:00:00)](https://github.com/ijapesigan/docker-rocker/actions/workflows/docker-build-push-daily-rocker.yml/badge.svg)](https://github.com/ijapesigan/docker-rocker/actions/workflows/docker-build-push-daily-rocker.yml)
+16:00:00)](https://github.com/ijapesigan/docker-rocker/actions/workflows/docker-build-push-daily-rocker.yml/badge.svg)](https://github.com/ijapesigan/docker-rocker/actions/workflows/docker-build-push-daily-rocker.yml)
 [![Shell
 Check](https://github.com/ijapesigan/docker-rocker/actions/workflows/shellcheck.yml/badge.svg)](https://github.com/ijapesigan/docker-rocker/actions/workflows/shellcheck.yml)
 <!-- badges: end -->
