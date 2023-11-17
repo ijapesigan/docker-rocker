@@ -1,7 +1,7 @@
 ijapesigan/rocker
 ================
 Ivan Jacob Agaloos Pesigan
-2023-11-12
+2023-11-17
 
 <!-- README.md is generated from .setup/readme/README.Rmd. Please edit that file -->
 <!-- badges: start -->
@@ -13,7 +13,7 @@ Project](https://github.com/ijapesigan/docker-rocker/actions/workflows/make.yml/
 [![Docker and Apptainer Build and Push \[amd64/arm64\]
 (Weekly)](https://github.com/ijapesigan/docker-rocker/actions/workflows/docker-apptainer-build-push-weekly-amd64-arm64.yml/badge.svg)](https://github.com/ijapesigan/docker-rocker/actions/workflows/docker-apptainer-build-push-weekly-amd64-arm64.yml)
 [![Docker Build and Push \[amd64/arm64\] (Daily at
-00:00:00)](https://github.com/ijapesigan/docker-rocker/actions/workflows/docker-build-push-daily-rocker.yml/badge.svg)](https://github.com/ijapesigan/docker-rocker/actions/workflows/docker-build-push-daily-rocker.yml)
+03:00:00)](https://github.com/ijapesigan/docker-rocker/actions/workflows/docker-build-push-daily-rocker.yml/badge.svg)](https://github.com/ijapesigan/docker-rocker/actions/workflows/docker-build-push-daily-rocker.yml)
 [![Shell
 Check](https://github.com/ijapesigan/docker-rocker/actions/workflows/shellcheck.yml/badge.svg)](https://github.com/ijapesigan/docker-rocker/actions/workflows/shellcheck.yml)
 <!-- badges: end -->
@@ -30,9 +30,8 @@ workflow performs the following:
 
 - Builds the Docker image specified by the `Dockerfile`.
 - Pushes the image to
-  [DockerHub](https://hub.docker.com/repository/docker/ijapesigan/rocker/general)
-  using the tags `latest` and
-  `date and time of build (YEAR-MM-DD-HHMMSSMS)`.
+  [DockerHub](https://hub.docker.com/r/ijapesigan/rocker) using the tags
+  `latest` and `date and time of build (YEAR-MM-DD-HHMMSSMS)`.
 - Builds the Singularity Image File (SIF) using Apptainer based on the
   Docker Hub image from the previous step.
 - Creates a GitHub release named `rocker-YEAR-MM-DD-HHMMSSMS`. Note that
