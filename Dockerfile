@@ -1,5 +1,7 @@
 FROM ijapesigan/dev:main
 
+ENV PATH="/opt/TinyTeX/bin/x86_64-linux:${PATH}"
+
 ENV S6_VERSION="v2.1.0.2"
 ENV RSTUDIO_VERSION="2024.12.0+467"
 ENV DEFAULT_USER="rstudio"
@@ -20,8 +22,6 @@ RUN cd /usr/src/local/src     && \
     chmod 777 setup.sh        && \
     ./setup.sh                && \
     rm -rf /usr/src/local/src
-
-ENV PATH="/opt/TinyTeX/bin/x86_64-linux:${PATH}"
 
 # extra metadata
 LABEL org.opencontainers.image.source="https://github.com/ijapesigan/docker-rocker" \
