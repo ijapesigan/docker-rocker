@@ -1,7 +1,5 @@
 FROM ijapesigan/dev:main
 
-ENV PATH="/opt/TinyTeX/bin/x86_64-linux:${PATH}"
-
 ENV S6_VERSION="v2.1.0.2"
 ENV RSTUDIO_VERSION="2024.12.0+467"
 ENV DEFAULT_USER="rstudio"
@@ -10,6 +8,8 @@ RUN /rocker_scripts/install_rstudio.sh
 
 EXPOSE 8787
 CMD ["/init"]
+
+RUN /rocker_scripts/install_texlive.sh
 
 RUN /rocker_scripts/install_pandoc.sh
 
