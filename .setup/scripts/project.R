@@ -17,6 +17,8 @@
 
 project <- "docker-rocker"
 
+rproject_ver <- NULL
+
 pkg_cran <- c()
 
 pkg_github <- c()
