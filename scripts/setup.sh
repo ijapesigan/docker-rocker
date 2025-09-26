@@ -7,4 +7,5 @@ bash rproject.sh
 bash tinytex.sh
 bash apptainer.sh
 bash custom.sh
+bash uv.sh
 bash post.sh

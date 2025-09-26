@@ -2,13 +2,4 @@
 
 set -e
 
-apt update
-apt install -y software-properties-common
-
-add-apt-repository -y ppa:apptainer/ppa
-apt update
-apt install -y apptainer
-
-add-apt-repository -y ppa:apptainer/ppa
-apt update
-apt install -y apptainer-suid
+curl -s https://raw.githubusercontent.com/apptainer/apptainer/main/tools/install-unprivileged.sh | bash -s - /usr/local/bin
