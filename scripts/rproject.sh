@@ -10,6 +10,7 @@ install2.r --error --skipinstalled -n -1 \
     distro      \
     knitr       \
     lintr       \
+    pak         \
     pkgdown     \
     quarto      \
     Rcpp        \

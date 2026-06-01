@@ -1,7 +1,7 @@
 FROM ijapesigan/dev:latest
 
 ENV S6_VERSION="v2.1.0.2"
-ENV RSTUDIO_VERSION="2026.01.0+392"
+ENV RSTUDIO_VERSION="2026.04.0+526"
 ENV DEFAULT_USER="rstudio"
 
 RUN /rocker_scripts/install_rstudio.sh
