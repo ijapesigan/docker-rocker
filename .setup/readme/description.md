@@ -1,0 +1,1 @@
+An R image for projects based on the [Rocker Project](https://rocker-project.org/), built on `ijapesigan/dev` (rebuilt after it every day), with rProject, TinyTeX, an unprivileged [Apptainer](https://apptainer.org/), and [uv](https://docs.astral.sh/uv/).
