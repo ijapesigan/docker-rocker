@@ -6,17 +6,11 @@ scripts/github.txt, or .setup/scripts/project.R instead. -->
 # ijapesigan/rocker
 
 <!-- badges: start -->
-
-[![Docker Build and Push Rocker \[multi\]
-(Daily)](https://github.com/ijapesigan/docker-rocker/actions/workflows/docker-build-push-daily-multi-rocker.yml/badge.svg)](https://github.com/ijapesigan/docker-rocker/actions/workflows/docker-build-push-daily-multi-rocker.yml)
-[![Docker Build and Push
-\[multi\]](https://github.com/ijapesigan/docker-rocker/actions/workflows/docker-build-push-multi.yml/badge.svg)](https://github.com/ijapesigan/docker-rocker/actions/workflows/docker-build-push-multi.yml)
-[![Make
-Project](https://github.com/ijapesigan/docker-rocker/actions/workflows/make.yml/badge.svg)](https://github.com/ijapesigan/docker-rocker/actions/workflows/make.yml)
-[![Non-ASCII
-Check](https://github.com/ijapesigan/docker-rocker/actions/workflows/non-ascii-check.yml/badge.svg)](https://github.com/ijapesigan/docker-rocker/actions/workflows/non-ascii-check.yml)
-[![Shell
-Check](https://github.com/ijapesigan/docker-rocker/actions/workflows/shellcheck.yml/badge.svg)](https://github.com/ijapesigan/docker-rocker/actions/workflows/shellcheck.yml)
+[![Make Project](https://github.com/ijapesigan/docker-rocker/actions/workflows/make.yml/badge.svg)](https://github.com/ijapesigan/docker-rocker/actions/workflows/make.yml)
+[![Docker Build and Push Rocker [multi] (Daily)](https://github.com/ijapesigan/docker-rocker/actions/workflows/docker-build-push-daily-multi-rocker.yml/badge.svg)](https://github.com/ijapesigan/docker-rocker/actions/workflows/docker-build-push-daily-multi-rocker.yml)
+[![Docker Build and Push [multi]](https://github.com/ijapesigan/docker-rocker/actions/workflows/docker-build-push-multi.yml/badge.svg)](https://github.com/ijapesigan/docker-rocker/actions/workflows/docker-build-push-multi.yml)
+[![Non-ASCII Check](https://github.com/ijapesigan/docker-rocker/actions/workflows/non-ascii-check.yml/badge.svg)](https://github.com/ijapesigan/docker-rocker/actions/workflows/non-ascii-check.yml)
+[![Shell Check](https://github.com/ijapesigan/docker-rocker/actions/workflows/shellcheck.yml/badge.svg)](https://github.com/ijapesigan/docker-rocker/actions/workflows/shellcheck.yml)
 <!-- badges: end -->
 
 ## Description
@@ -31,6 +25,18 @@ Based on `ijapesigan/dev:latest`; built for linux/amd64 and linux/arm64.
 Source: <https://github.com/ijapesigan/docker-rocker>.
 
 ## Use
+
+RStudio Server (Docker):
+
+``` bash
+docker run --rm -ti -e PASSWORD=yourpassword -p 127.0.0.1:8787:8787 ijapesigan/rocker
+```
+
+Open `http://localhost:8787` in a web browser to launch RStudio Server
+(`127.0.0.1` keeps it on this computer).
+
+- username: rstudio
+- password: yourpassword
 
 Docker (Docker Hub or the GitHub Container Registry):
 
